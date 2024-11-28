@@ -8,7 +8,9 @@ resource "porkbun_nameservers" "flamingo_dev" {
 }
 
 resource "cloudflare_zone" "flamingo_dev" {
-  account = cloudflare_account.me
+  account = {
+    id = var.CLOUDFLARE_ME_ID
+  }
   name = "flamingo.dev"
 }
 
