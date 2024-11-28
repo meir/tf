@@ -15,7 +15,7 @@ resource "cloudflare_zone" "mm_nl" {
 resource "cloudflare_dns_record" "mm_nl_gmail_cname" {
   zone_id = cloudflare_zone.mm_nl.id
   name = "mail"
-  value = "ghs.googlehosted.com"
+  content = "ghs.googlehosted.com"
   type = "CNAME"
   comment = "Gmail Suite CNAME"
   proxied = false
@@ -26,7 +26,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_cname" {
 resource "cloudflare_dns_record" "mm_nl_gmail_aspmx" {
   zone_id = cloudflare_zone.mm_nl.id
   name = "mail"
-  value = "aspmx.l.google.com"
+  content = "aspmx.l.google.com"
   type = "CNAME"
   comment = "Gmail Suite ASPMX"
   proxied = false
@@ -36,7 +36,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_aspmx" {
 resource "cloudflare_dns_record" "mm_nl_gmail_mx_0" {
   zone_id = cloudflare_zone.mm_nl.id
   name = ""
-  value = "smtp.google.com"
+  content = "smtp.google.com"
   type = "MX"
   comment = "Gmail Suite MX #1"
   ttl = 3600
@@ -46,7 +46,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_mx_0" {
 resource "cloudflare_dns_record" "mm_nl_gmail_mx_1" {
   zone_id = cloudflare_zone.mm_nl.id
   name = ""
-  value = "alt1.aspmx.l.google.com"
+  content = "alt1.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #2"
   ttl = 3600
@@ -56,7 +56,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_mx_1" {
 resource "cloudflare_dns_record" "mm_nl_gmail_mx_2" {
   zone_id = cloudflare_zone.mm_nl.id
   name = ""
-  value = "alt2.aspmx.l.google.com"
+  content = "alt2.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #3"
   ttl = 3600
@@ -66,7 +66,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_mx_2" {
 resource "cloudflare_dns_record" "mm_nl_gmail_mx_3" {
   zone_id = cloudflare_zone.mm_nl.id
   name = ""
-  value = "alt3.aspmx.l.google.com"
+  content = "alt3.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #4"
   ttl = 3600
@@ -76,7 +76,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_mx_3" {
 resource "cloudflare_dns_record" "mm_nl_gmail_mx_4" {
   zone_id = cloudflare_zone.mm_nl.id
   name = ""
-  value = "alt4.aspmx.l.google.com"
+  content = "alt4.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #5"
   ttl = 3600
@@ -86,7 +86,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_mx_4" {
 resource "cloudflare_dns_record" "mm_nl_gmail_domain_verification" {
   zone_id = cloudflare_zone.mm_nl.id
   name = "google._domainkey"
-  value = "google-site-verification=${var.GOOGLE_SITE_VERIFICATION}"
+  content = "google-site-verification=${var.GOOGLE_SITE_VERIFICATION}"
   type = "TXT"
   comment = "Gmail Suite Verification"
   ttl = 3600
@@ -95,7 +95,7 @@ resource "cloudflare_dns_record" "mm_nl_gmail_domain_verification" {
 resource "cloudflare_dns_record" "mm_nl_gmail_domain_key" {
   zone_id = cloudflare_zone.mm_nl.id
   name = ""
-  value = "v=DKIM1; k=rsa; p=${var.GOOGLE_DOMAIN_KEY}"
+  content = "v=DKIM1; k=rsa; p=${var.GOOGLE_DOMAIN_KEY}"
   type = "TXT"
   comment = "Gmail Suite DKIM"
   ttl = 3600
