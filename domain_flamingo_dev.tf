@@ -9,7 +9,7 @@ resource "porkbun_nameservers" "flamingo_dev" {
 
 resource "cloudflare_zone" "flamingo_dev" {
   account = cloudflare_account.me
-  zone = var.flamingo_dev_DOMAIN
+  name = "flamingo.dev"
 }
 
 resource "cloudflare_dns_record" "flamingo_dev_ditto_cname" {

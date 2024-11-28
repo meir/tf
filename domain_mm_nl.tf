@@ -9,7 +9,7 @@ resource "porkbun_nameservers" "mm_nl" {
 
 resource "cloudflare_zone" "mm_nl" {
   account = cloudflare_account.me
-  zone = var.MM_NL_DOMAIN
+  name = var.MM_NL_DOMAIN
 }
 
 resource "cloudflare_dns_record" "mm_nl_gmail_cname" {
