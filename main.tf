@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "flamingo-dev"
+
+    workspaces {
+      name = "tf"
+    }
+  }
+
   required_providers {
     porkbun = {
       source = "kyswtn/porkbun"
