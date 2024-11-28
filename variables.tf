@@ -5,6 +5,10 @@ variable "CLOUDFLARE_API_TOKEN" {
   type = string
 }
 
+variable "CLOUDFLARE_ME" {
+  type = string
+}
+
 # Porkbun
 
 variable "PORKBUN_API_KEY" {

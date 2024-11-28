@@ -8,6 +8,7 @@ resource "porkbun_nameservers" "mm_nl" {
 }
 
 resource "cloudflare_zone" "mm_nl" {
+  account_id = cloudflare_account.me.id
   zone = var.MM_NL_DOMAIN
 }
 
