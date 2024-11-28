@@ -25,7 +25,7 @@ resource "cloudflare_record" "mm_nl_gmail_cname" {
 
 resource "cloudflare_record" "mm_nl_gmail_aspmx" {
   zone_id = cloudflare_zone.mm_nl.id
-  name = "mail"
+  name = "@"
   content = "aspmx.l.google.com"
   type = "CNAME"
   comment = "Gmail Suite ASPMX"

@@ -57,7 +57,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_cname" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_aspmx" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = "mail"
+  name = "@"
   content = "aspmx.l.google.com"
   type = "CNAME"
   comment = "Gmail Suite ASPMX"
