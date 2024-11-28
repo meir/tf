@@ -14,8 +14,8 @@ resource "porkbun_dns_record" "yesimhuman_dev_github_pages_0" {
   name = ""
   type = "A"
   content = "185.199.108.153"
-  TTL = 300
-  Notes = "Github Pages IP #1"
+  ttl = 300
+  notes = "Github Pages IP #1"
 }
 
 resource "porkbun_dns_record" "yesimhuman_dev_github_pages_1" {
@@ -23,8 +23,8 @@ resource "porkbun_dns_record" "yesimhuman_dev_github_pages_1" {
   name = ""
   type = "A"
   content = "185.199.109.153"
-  TTL = 300
-  Notes = "Github Pages IP #2"
+  ttl = 300
+  notes = "Github Pages IP #2"
 }
 
 resource "porkbun_dns_record" "yesimhuman_dev_github_pages_2" {
@@ -32,8 +32,8 @@ resource "porkbun_dns_record" "yesimhuman_dev_github_pages_2" {
   name = ""
   type = "A"
   content = "185.199.110.153"
-  TTL = 300
-  Notes = "Github Pages IP #3"
+  ttl = 300
+  notes = "Github Pages IP #3"
 }
 
 resource "porkbun_dns_record" "yesimhuman_dev_github_pages_3" {
@@ -41,8 +41,8 @@ resource "porkbun_dns_record" "yesimhuman_dev_github_pages_3" {
   name = ""
   type = "A"
   content = "185.199.111.153"
-  TTL = 300
-  Notes = "Github Pages IP #4"
+  ttl = 300
+  notes = "Github Pages IP #4"
 }
 
 resource "porkbun_dns_record" "yesimhuman_dev_github_pages_cname" {
@@ -50,6 +50,6 @@ resource "porkbun_dns_record" "yesimhuman_dev_github_pages_cname" {
   name = "www"
   type = "CNAME"
   content = "meir.github.io."
-  TTL = 300
-  Notes = "Github Pages CNAME"
+  ttl = 300
+  notes = "Github Pages CNAME"
 }
