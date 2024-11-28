@@ -114,29 +114,29 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_4" {
   priority = 10
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_txt" {
+resource "cloudflare_dns_record" "flamingo_dev_gmail_domain_verification" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
-  value = "v=spf1 include:_spf.google.com ~all"
-  type = "TXT"
-  comment = "Gmail Suite TXT"
-  ttl = 3600
-}
-
-resource "cloudflare_dns_record" "flamingo_dev_gmail_txt" {
-  zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "google._domainkey"
   value = "google-site-verification=${var.GOOGLE_SITE_VERIFICATION}"
   type = "TXT"
   comment = "Gmail Suite Verification"
   ttl = 3600
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_txt" {
+resource "cloudflare_dns_record" "flamingo_dev_gmail_domain_key" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   value = "v=DKIM1; k=rsa; p=${var.GOOGLE_DOMAIN_KEY}"
   type = "TXT"
   comment = "Gmail Suite DKIM"
+  ttl = 3600
+}
+
+resource "cloudflare_dns_record" "flamingo_dev_vercel_verification" {
+  zone_id = cloudflare_zone.flamingo_dev.id
+  name = "_vercel"
+  value = "vc-domain-verify=${var.GOOGLE_DOMAIN_KEY}"
+  type = "TXT"
+  comment = "Vercel Domain Verification"
   ttl = 3600
 }

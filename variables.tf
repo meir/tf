@@ -31,3 +31,8 @@ variable "GOOGLE_SITE_VERIFICATION" {
   type = string
 }
 
+# Vercel
+
+variable "VERCEL_DOMAIN_VERIFICATION" {
+  type = string
+}
