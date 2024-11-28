@@ -67,7 +67,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_aspmx" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_mx_0" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "@"
   content = "smtp.google.com"
   type = "MX"
   comment = "Gmail Suite MX #1"
@@ -77,7 +77,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_mx_0" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_mx_1" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "@"
   content = "alt1.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #2"
@@ -87,7 +87,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_mx_1" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_mx_2" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "@"
   content = "alt2.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #3"
@@ -97,7 +97,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_mx_2" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_mx_3" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "@"
   content = "alt3.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #4"
@@ -107,7 +107,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_mx_3" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_mx_4" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "@"
   content = "alt4.aspmx.l.google.com"
   type = "MX"
   comment = "Gmail Suite MX #5"
@@ -126,7 +126,7 @@ resource "cloudflare_record" "flamingo_dev_gmail_domain_verification" {
 
 resource "cloudflare_record" "flamingo_dev_gmail_domain_key" {
   zone_id = cloudflare_zone.flamingo_dev.id
-  name = ""
+  name = "@"
   content = "v=DKIM1; k=rsa; p=${var.GOOGLE_DOMAIN_KEY}"
   type = "TXT"
   comment = "Gmail Suite DKIM"
