@@ -54,12 +54,12 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_cname" {
 }
 
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_cname" {
+resource "cloudflare_dns_record" "flamingo_dev_gmail_aspmx" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "mail"
   value = "aspmx.l.google.com"
   type = "CNAME"
-  comment = "Gmail Suite MX"
+  comment = "Gmail Suite ASPMX"
   proxied = false
   ttl = 3600
 }
