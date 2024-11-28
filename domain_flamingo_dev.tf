@@ -8,13 +8,11 @@ resource "porkbun_nameservers" "flamingo_dev" {
 }
 
 resource "cloudflare_zone" "flamingo_dev" {
-  account = {
-    id = var.CLOUDFLARE_ME_ID
-  }
-  name = "flamingo.dev"
+  account_id = var.CLOUDFLARE_ME_ID
+  zone = "flamingo.dev"
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_ditto_cname" {
+resource "cloudflare_record" "flamingo_dev_ditto_cname" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "ditto"
   content = "cname.vercel-dns.com"
@@ -24,7 +22,7 @@ resource "cloudflare_dns_record" "flamingo_dev_ditto_cname" {
   ttl = 600
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_social_cname" {
+resource "cloudflare_record" "flamingo_dev_social_cname" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "social"
   content = "cname.vercel-dns.com"
@@ -34,7 +32,7 @@ resource "cloudflare_dns_record" "flamingo_dev_social_cname" {
   ttl = 600
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_sweelinck_cname" {
+resource "cloudflare_record" "flamingo_dev_sweelinck_cname" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "sweelinck"
   content = "cname.vercel-dns.com"
@@ -46,7 +44,7 @@ resource "cloudflare_dns_record" "flamingo_dev_sweelinck_cname" {
 
 # Gmail Suite
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_cname" {
+resource "cloudflare_record" "flamingo_dev_gmail_cname" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "mail"
   content = "ghs.googlehosted.com"
@@ -57,7 +55,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_cname" {
 }
 
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_aspmx" {
+resource "cloudflare_record" "flamingo_dev_gmail_aspmx" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "mail"
   content = "aspmx.l.google.com"
@@ -67,7 +65,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_aspmx" {
   ttl = 3600
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_0" {
+resource "cloudflare_record" "flamingo_dev_gmail_mx_0" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   content = "smtp.google.com"
@@ -77,7 +75,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_0" {
   priority = 1
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_1" {
+resource "cloudflare_record" "flamingo_dev_gmail_mx_1" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   content = "alt1.aspmx.l.google.com"
@@ -87,7 +85,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_1" {
   priority = 5
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_2" {
+resource "cloudflare_record" "flamingo_dev_gmail_mx_2" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   content = "alt2.aspmx.l.google.com"
@@ -97,7 +95,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_2" {
   priority = 5
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_3" {
+resource "cloudflare_record" "flamingo_dev_gmail_mx_3" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   content = "alt3.aspmx.l.google.com"
@@ -107,7 +105,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_3" {
   priority = 10
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_4" {
+resource "cloudflare_record" "flamingo_dev_gmail_mx_4" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   content = "alt4.aspmx.l.google.com"
@@ -117,7 +115,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_mx_4" {
   priority = 10
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_domain_verification" {
+resource "cloudflare_record" "flamingo_dev_gmail_domain_verification" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "google._domainkey"
   content = "google-site-verification=${var.GOOGLE_SITE_VERIFICATION}"
@@ -126,7 +124,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_domain_verification" {
   ttl = 3600
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_gmail_domain_key" {
+resource "cloudflare_record" "flamingo_dev_gmail_domain_key" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = ""
   content = "v=DKIM1; k=rsa; p=${var.GOOGLE_DOMAIN_KEY}"
@@ -135,7 +133,7 @@ resource "cloudflare_dns_record" "flamingo_dev_gmail_domain_key" {
   ttl = 3600
 }
 
-resource "cloudflare_dns_record" "flamingo_dev_vercel_verification" {
+resource "cloudflare_record" "flamingo_dev_vercel_verification" {
   zone_id = cloudflare_zone.flamingo_dev.id
   name = "_vercel"
   content = "vc-domain-verify=${var.GOOGLE_DOMAIN_KEY}"
