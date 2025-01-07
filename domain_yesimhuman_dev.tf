@@ -53,3 +53,12 @@ resource "porkbun_dns_record" "yesimhuman_dev_github_pages_cname" {
   ttl = 600
   notes = "Github Pages CNAME"
 }
+
+resource "porkbun_dns_record" "yesimhuman_dev_discord_txt" {
+  domain = "yesimhuman.dev"
+  name = "_discord"
+  type = "TXT"
+  content = "dh=afb0d6d404e19ffbbcd0794cfdcbd1c297ae710d"
+  ttl = 600
+  notes = "Discord verification"
+}
