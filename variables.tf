@@ -44,3 +44,23 @@ variable "GOOGLE_SITE_VERIFICATION" {
 variable "VERCEL_DOMAIN_VERIFICATION" {
   type = string
 }
+
+# Google Cloud Project
+
+variable "GCP_PROJECT" {
+  type = string
+}
+
+variable "GCP_REGION" {
+  type = string
+}
+
+# Grafana
+
+variable "GRAFANA_URL" {
+  type = string
+}
+
+variable "GRAFANA_AUTH" {
+  type = string
+}

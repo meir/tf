@@ -18,6 +18,14 @@ terraform {
       source = "cloudflare/cloudflare"
       version = "4.47.0"
     }
+    google = {
+      source = "hashicorp/google"
+      version = "6.16.0"
+    }
+    grafana = {
+      source = "grafana/grafana"
+      version = "3.16.0"
+    }
   }
 }
 
