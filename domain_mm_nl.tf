@@ -1,5 +1,5 @@
 
-resource "porkbun_nameservers" "mm_nl" {
+resource "porkbun_domain_nameservers" "mm_nl" {
   domain = var.MM_NL_DOMAIN
   nameservers = [
     "guy.ns.cloudflare.com",

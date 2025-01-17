@@ -11,8 +11,8 @@ terraform {
 
   required_providers {
     porkbun = {
-      source = "kyswtn/porkbun"
-      version = "0.1.2"
+      source = "jianyuan/porkbun"
+      version = "0.1.0"
     }
     cloudflare = {
       source = "cloudflare/cloudflare"
