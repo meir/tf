@@ -64,3 +64,4 @@ variable "GRAFANA_URL" {
 variable "GRAFANA_AUTH" {
   type = string
 }
+
