@@ -31,7 +31,11 @@ variable "MM_NL_DOMAIN" {
 
 # Google Domains
 
-variable "GOOGLE_DOMAIN_KEY" {
+variable "GOOGLE_DOMAIN_KEY_MM" {
+  type = string
+}
+
+variable "GOOGLE_DOMAIN_KEY_FLAMINGO" {
   type = string
 }
 

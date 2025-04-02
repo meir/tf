@@ -85,8 +85,8 @@ resource "cloudflare_record" "mm_nl_gmail_mx_4" {
 
 resource "cloudflare_record" "mm_nl_gmail_domain_verification" {
   zone_id = cloudflare_zone.mm_nl.id
+  name = "google._domainkey"
   content = "${var.GOOGLE_SITE_VERIFICATION}"
-  name = "google._domainKey"
   type = "TXT"
   comment = "Gmail Suite Verification"
   ttl = 3600
@@ -94,8 +94,8 @@ resource "cloudflare_record" "mm_nl_gmail_domain_verification" {
 
 resource "cloudflare_record" "mm_nl_gmail_domain_key" {
   zone_id = cloudflare_zone.mm_nl.id
-  name = "google._domainKey"
-  content = "${var.GOOGLE_DOMAIN_KEY}"
+  name = "google._domainkey"
+  content = "${var.GOOGLE_DOMAIN_KEY_MM}"
   type = "TXT"
   comment = "Gmail Suite DKIM"
   ttl = 3600
