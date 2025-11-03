@@ -23,6 +23,12 @@ variable "PORKBUN_SECRET_KEY" {
   type = string
 }
 
+# Centron
+
+variable "DKIM_CENTRON" {
+  type = string
+}
+
 # Domain MM
 
 variable "MM_NL_DOMAIN" {
