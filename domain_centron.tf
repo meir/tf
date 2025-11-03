@@ -55,7 +55,7 @@ resource "porkbun_dns_record" "centrontest_nl_github_pages_cname" {
 resource "porkbun_dns_record" "centron_eu_github_pages_cname" {
   domain = "centron.eu"
   subdomain = ""
-  type = "CNAME"
+  type = "ALIAS"
   content = "centrontest.nl."
 }
 
