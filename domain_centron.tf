@@ -99,7 +99,7 @@ resource "porkbun_dns_record" "centrontest_nl_zoho_mail_3" {
 
 resource "porkbun_dns_record" "centrontest_nl_zoho_dkim" {
   domain = "centrontest.nl"
-  name = "dkim._domainkey"
+  subdomain = "dkim._domainkey"
   content = "${var.DKIM_CENTRON}"
   type = "TXT"
   ttl = 3600
