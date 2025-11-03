@@ -47,14 +47,14 @@ resource "porkbun_dns_record" "centrontest_nl_github_pages_cname" {
   domain = "centrontest.nl"
   subdomain = "www"
   type = "CNAME"
-  content = "centron-eu.github.io."
+  content = "centrontest.nl."
 }
 
 resource "porkbun_dns_record" "centron_eu_github_pages_cname" {
   domain = "centron.eu"
   subdomain = ""
   type = "CNAME"
-  content = "centron-eu.github.io."
+  content = "centrontest.nl."
 }
 
 resource "porkbun_dns_record" "www_centron_eu_github_pages_cname" {
