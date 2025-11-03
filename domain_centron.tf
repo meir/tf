@@ -70,7 +70,6 @@ resource "porkbun_dns_record" "centrontest_nl_zoho_verification" {
   domain = "centrontest.nl"
   content = "v=spf1 include:zohomail.eu ~all"
   type = "TXT"
-  comment = "Zoho verification"
   ttl = 3600
 }
 
@@ -78,7 +77,6 @@ resource "porkbun_dns_record" "centrontest_nl_zoho_mail_1" {
   domain = "centrontest.nl"
   content = "mx.zoho.eu"
   type = "MX"
-  comment = "Zoho Mail #1"
   ttl = 3600
   priority = 10
 }
@@ -87,7 +85,6 @@ resource "porkbun_dns_record" "centrontest_nl_zoho_mail_2" {
   domain = "centrontest.nl"
   content = "mx2.zoho.eu"
   type = "MX"
-  comment = "Zoho Mail #2"
   ttl = 3600
   priority = 20
 }
@@ -96,7 +93,6 @@ resource "porkbun_dns_record" "centrontest_nl_zoho_mail_3" {
   domain = "centrontest.nl"
   content = "mx3.zoho.eu"
   type = "MX"
-  comment = "Zoho Mail #3"
   ttl = 3600
   priority = 50
 }
@@ -106,6 +102,5 @@ resource "porkbun_dns_record" "centrontest_nl_zoho_dkim" {
   name = "dkim._domainkey"
   content = "${var.DKIM_CENTRON}"
   type = "TXT"
-  comment = "Zoho DKIM"
   ttl = 3600
 }
