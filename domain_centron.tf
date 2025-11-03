@@ -57,7 +57,7 @@ resource "porkbun_dns_record" "centron_eu_github_pages_cname" {
   content = "centron-eu.github.io."
 }
 
-resource "porkbun_dns_record" "centron_eu_github_pages_cname" {
+resource "porkbun_dns_record" "www_centron_eu_github_pages_cname" {
   domain = "centron.eu"
   subdomain = "www"
   type = "CNAME"
